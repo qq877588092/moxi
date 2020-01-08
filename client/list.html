@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/main.css?v=2" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="sideNav" id="f_title_top">
+        <div class="insideNav">
+            <ul class="insideNavLeft">
+                <li><a class="home" href="http://www.moximoxi.net">首页</a></li>
+                <li><a class="collect" href="javascript:void(0);" onclick="AddFavorite('我的网站',location.href)">
+                        收藏摩西</a></li>
+                <li><a class="attention gzmx" href="#">关注摩西<img src="images/code_01.png" alt="关注摩西" class="code"></a>
+                </li>
+            </ul>
+            <ul class="insideNavRight">
+                <li class="welcome">您好，欢迎来到摩西！</li>
+                <li id="toolbar_left">
+                    <a class="login" href="http://www.moximoxi.net/login.aspx">登录</a>&nbsp;
+                    <a class="register" href="http://www.moximoxi.net/login.aspx">免费注册</a>
+                </li>
+                <li id="toolbar_right"></li>
+                <li><a class="Shopping" href="http://www.moximoxi.net/buycart.aspx">
+                        购物车 <strong style="font-weight:700;" id="head_car_count"></strong> 件商品</a></li>
+                <li><a class="Online_service" href="http://www.moximoxi.net/CustomSupport.aspx">
+                        在线客服 400-660-6366</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="topSmallBanner">
+        <a class="topSmallBannerClose" href="javascript:void(0);" target="_self" title="关闭">x</a>
+    </div>
+    <div class="header">
+        <div class="inHeader">
+            <div class="inHeaderT">
+                <div class="logo">
+                    <h1>
+                        <a href="http://www.moximoxi.net" title="摩西网">摩西网</a></h1>
+                    <span></span>
+                </div>
+                <div class="search">
+                    <div style="line-height: 24px; font-size: 12px; color: #C70904;">
+                        日元汇率：0.064504
+                        （100日元＝6.4504元）
+                    </div>
+                    <div class="searchTop">
+                        <input id="txt-header-search" class="searchTopL" type="text" placeholder="" />
+                        <button id="btn-header-search" class="searchTopR">
+                            搜 索</button>
+                    </div>
+                    <div class="searchLinks">
+                        <span>热门搜索：</span> <a href="http://www.moximoxi.net/search.aspx?keyword=酵素&classid=0">
+                            酵素 </a><a href="http://www.moximoxi.net/search.aspx?keyword=白色恋人&classid=0">
+                            白色恋人 </a><a href="http://www.moximoxi.net/search.aspx?keyword=胶原蛋白&classid=0">
+                            胶原蛋白 </a><a href="http://www.moximoxi.net/search.aspx?keyword=象印&classid=0">
+                            象印 </a><a href="http://www.moximoxi.net/search.aspx?keyword=MTG&classid=0">
+                            MTG </a><a href="http://www.moximoxi.net/search.aspx?keyword=SONY&classid=0">
+                            SONY </a><a href="http://www.moximoxi.net/search.aspx?keyword=膳魔师&classid=0">
+                            膳魔师 </a><a href="http://www.moximoxi.net/search.aspx?keyword=花王&classid=0">
+                            花王 </a><a href="http://www.moximoxi.net/search.aspx?keyword=大王&classid=0">
+                            大王 </a>
+                    </div>
+                </div>
+                <div class="searchRight">
+                </div>
+            </div>
+            <div class="nav">
+                <span id="navAll">商品全部分类</span>
+                <ul class="inNav">
+                    <li><a target="_blank" href="http://www.moximoxi.net/">首页</a> </li>
+                    <li><a target="_blank" href="http://huodong.moximoxi.net/collectnew.aspx">
+                            <img src=" images/3013191871.gif" style="position: relative;top:-8px;" alt="保税区闪送" />
+                        </a> </li>
+                    <li style="display: none"><a target="_blank" href="http://huodong.moximoxi.net/kuajingtuan.aspx">
+                            跨境团</a> </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/XhList.aspx?Stock=2">国内现货</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.moximoxi.net/XhList.aspx?Stock=1">日本现货</a>
+                    </li>
+                    <li class='moxiclub' onclick="window.open('http://club.moximoxi.net');"><a target="_blank"
+                            href="http://club.moximoxi.net"></a>
+                    </li>
+                    <li><a target="_blank" href="http://huodong.moximoxi.net/SearchRakuten.aspx">
+                            乐天专区</a> </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/daigou.aspx">代购/代拍</a>
+                    </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/fengjiao">ECC蜂胶</a>
+                    </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/LeaveWord.aspx">
+                            留言板</a> </li>
+                </ul>
+            </div>
+            <!-- 左侧导航栏开始 -->
+            <div class="serverMenu" style="display: block;">
+                <ul class="inServerMenu">
+                </ul>
+            </div>
+            <!-- 展开详细列表具体分类 -->
+            <div class="inServerMenuList">
+            </div>
+        </div>
+    </div>
+    <!-- 内容区 -->
+    <div class="main">
+
+    </div>
+
+    <div class="footer">
+        <div class="inFooter">
+            <div class="inFooterInfo">
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            购物指南</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-1.html" rel="nofollow">购物流程</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-2.html" rel="nofollow">会员介绍</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-3.html" rel="nofollow">订单状态</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-4.html" rel="nofollow">积分说明</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-5.html" rel="nofollow">常见问题</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-17.html" rel="nofollow">搜索小贴士</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-23.html" rel="nofollow">税则归类表</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            关于配送</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-6.html" rel="nofollow">配送方式</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-7.html" rel="nofollow">关于邮资</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-8.html" rel="nofollow">配送时间</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-9.html" rel="nofollow">关于关税</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            关于支付</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-20.html" rel="nofollow">网上银行</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-22.html" rel="nofollow">银联国际支付</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-26.html" rel="nofollow">银联在线支付</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-10.html" rel="nofollow">支付宝</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-12.html" rel="nofollow">常见支付问题</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            售后服务</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-13.html" rel="nofollow">服务承诺</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-14.html" rel="nofollow">售后保证</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-15.html" rel="nofollow">退款说明</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-16.html" rel="nofollow">日本节假日</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            相关信息</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/CompanyProfile.aspx" rel="nofollow">关于摩西</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/ContactUs.aspx" rel="nofollow">联系我们</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-27.html" rel="nofollow">招贤纳士</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/privacypolicy.aspx" rel="nofollow">隐私保护</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/sitemap.html">网站地图</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/rss.aspx">RSS订阅</a></dd>
+                </dl>
+            </div>
+            <div class="inFooterKefu">
+                <h3>
+                    客服热线</h3>
+                <span>（周一到周五 09:00~18:00）</span> <span class="tel">400-660-6366</span>
+                <h3>
+                    在线客服</h3>
+                <span style="padding-bottom: 45px;">（周一到周五 09:00~18:00）</span> <a href="javascript:;" title="联系客服"
+                    target="_blank">
+                    <img src="" alt="" title="联系客服" /></a>
+                <span>周六周日请发邮件至cs@moximoxi.net</span>
+                <span>我们会尽快解决您的问题</span>
+            </div>
+            <div class="inFootercode">
+                <img src="images/code.png" height="96" width="96" alt="" />
+                <h3>
+                    摩西网官方微信</h3>
+                <span>摩西网五周年中大促 关注微信千元现金券 抽奖等你拿！</span>
+            </div>
+        </div>
+        <div class="footService">
+            <div class="inFootService">
+            </div>
+        </div>
+        <div class="copyRight_con w1200">
+            <p>
+                <a target="_blank" href="http://www.miit.gov.cn/">浙ICP备19017342号</a> 摩西网版权所有 Copyright 2009-2019 All
+                Rights Reserved
+            </p>
+            <div class="brand_link">
+                <a target="_blank" href="http://www.moximoxi.net/HelpItem-10.html" rel="nofollow">
+                    <img src="images/foot_pic_04.png" alt="支付宝" title="支付宝">
+                </a>
+                <a target="_blank" href="http://www.moximoxi.net/HelpItem-22.html" rel="nofollow">
+                    <img src="images/foot_pic_03.png" alt="银联特约商户" title="银联特约商户">
+                </a>
+                <a target="_blank" href="http://www.moximoxi.net/ZJSBusiness.htm" rel="nofollow">
+                    <img src="images/1211023105.png" alt="浙江省网络工商" title="浙江省网络工商">
+                </a>
+                <a target="_blank" href="http://www.ectrustprc.org.cn/certificate.id/certificateb.php?id=20023544"
+                    rel="nofollow">
+                    <img src="images/foot_pic_01.png" alt="中国电子商务诚信单位" title="中国电子商务诚信单位">
+                </a>
+                <a target="_blank"
+                    href="http://ss.51honest.org/axbValidatePage.credit?action=detailCert&flag=company&creditCode=9992324113542718"
+                    rel="nofollow">
+                    <img src="images/foot_pic_02.png" alt="信用之星" title="信用之星">
+                </a>
+                <a target="_blank" href="http://haitao.smzdm.com" rel="nofollow">
+                    <img src="images/foot_pic_05.png" alt="什么值得买" title="信用之星">
+                </a>
+                <a target="_blank" href="http://www.lancichina.com" rel="nofollow">
+                    葡萄酒代理
+                </a>
+                <a target="_blank" href="http://www.1th1.com" rel="nofollow">
+                    危机公关
+                </a>
+                <a target="_blank" href="http://www.moximoxi.net/images/20190314195113.jpg" rel="nofollow">
+                    食品经营许可证
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
