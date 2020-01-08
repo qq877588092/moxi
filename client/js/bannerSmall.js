@@ -234,7 +234,7 @@ class PlayBannerMain {
             if (this.index == -1) {
                 this.index = this.data.length - 1;
             }
-            $(this.SliderBox).animate({left:`${-(this.width * this.index) + "px"}`})
+            $(this.SliderBox).stop().animate({left:`${-(this.width * this.index) + "px"}`})
             // this.SliderBox.style.left = -(this.width * this.index) + "px";
             this.focusStyle();
         }
@@ -244,7 +244,7 @@ class PlayBannerMain {
             if (this.index == this.data.length) {
                 this.index = 0;
             }
-            $(this.SliderBox).animate({left:`${-(this.width * this.index) + "px"}`})
+            $(this.SliderBox).stop().animate({left:`${-(this.width * this.index) + "px"}`})
             // this.SliderBox.style.left = -(this.width * this.index) + "px";
             this.focusStyle();
         }
@@ -254,7 +254,7 @@ class PlayBannerMain {
                 ele.onclick = () => {
                     this.index = index;
                     console.log($(this.SliderBox));
-                    $(this.SliderBox).animate({left:`${-(this.width * this.index) + "px"}`})
+                    $(this.SliderBox).stop().animate({left:`${-(this.width * this.index) + "px"}`})
                     // this.SliderBox.style.left = -(this.width * this.index) + "px";
                     this.focusStyle();
                 }

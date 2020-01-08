@@ -230,7 +230,7 @@ $(() => {
             if (this.index == -1) {
                 this.index = this.data.length - 1;
             }
-            $(this.SliderBox).animate({left:`${-(this.width * this.index) + "px"}`})
+            $(this.SliderBox).stop().animate({left:`${-(this.width * this.index) + "px"}`})
             // this.SliderBox.style.left = -(this.width * this.index) + "px";
             this.focusStyle();
         }
@@ -240,7 +240,7 @@ $(() => {
             if (this.index == this.data.length) {
                 this.index = 0;
             }
-            $(this.SliderBox).animate({left:`${-(this.width * this.index) + "px"}`})
+            $(this.SliderBox).stop().animate({left:`${-(this.width * this.index) + "px"}`})
             // this.SliderBox.style.left = -(this.width * this.index) + "px";
             this.focusStyle();
         }
@@ -249,7 +249,7 @@ $(() => {
             Array.from(this.SliderNav.children).forEach((ele, index) => {
                 ele.onclick = () => {
                     this.index = index;
-                    $(this.SliderBox).animate({left:`${-(this.width * this.index) + "px"}`})
+                    $(this.SliderBox).stop().animate({left:`${-(this.width * this.index) + "px"}`})
                     // this.SliderBox.style.left = -(this.width * this.index) + "px";
                     this.focusStyle();
                 }
