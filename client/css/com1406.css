@@ -118,7 +118,9 @@ a{ text-decoration:none; color:#333;  }
 .pager .last:hover { background-color:#666; color:#FFFFFF;}
 .pager .items {float:left; margin-right:30px;}
 .pager .items .item {float:left; margin-right:10px; border:#CCCCCC 1px solid; padding-left:15px; padding-right:15px; height:25px; line-height:25px; background-color:#FFFFFF; }
-.pager .items .item-cur {float:left; margin-right:10px; border:#CCCCCC 1px solid; padding-left:15px; padding-right:15px; height:25px; line-height:25px;background-color:#ccc; color:#FFFFFF; }
+.pager .items .item-cur {float:left; margin-right:10px; border:#CCCCCC 1px solid; padding-left:15px; padding-right:15px; height:25px; line-height:25px;color:#333; }
+.on{background-color:#ccc;color: #fff !important;}
+.pager .items .item-cur:hover { background-color:#ccc; color:#FFFFFF;}
 .pager .items .item:hover { background-color:#ccc; color:#FFFFFF;}
 .pager .items  .tex {float:left; float:left; height:25px; line-height:25px;  }
 .pager .next {float:left; border:#CCCCCC 1px solid; padding-left:15px; padding-right:15px; height:25px; line-height:25px;background-color:#FFFFFF;}
@@ -164,6 +166,7 @@ a{ text-decoration:none; color:#333;  }
 .floor_title .floor_tab li{ float:left; width:150px; text-align:center; position:relative; padding:0; margin:0;}
 .floor_title .floor_tab li a{ color:#666;}
 .floor_title .floor_tab .cur a{ color:#f60;}
+
 /*
 #showcase{overflow:hidden}
 #showcase .mt{margin-bottom:10px}

@@ -1,0 +1,152 @@
+.orders {
+    width: 1198px;
+    height: 36px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    position: relative;
+    top: 0px !important;
+    z-index: 58;
+  }
+  
+  .orders ul li {
+    float: left;
+  }
+  
+  .orders ul li a {
+    float: left;
+    display: block;
+    width: 70px;
+    height: 36px;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    line-height: 36px;
+  }
+  .bgColor{
+    background-color: #cf010e;
+  }
+  .tabs{
+    position: relative;
+  }
+  .tabs .xl{
+    position: absolute;
+    display: block;
+    width: 9px;
+    height: 10px;
+    background: url(../images/srpIcons.png) no-repeat -65px -108px;
+    top: 13px;
+    left: 50px;
+  }
+  .xlbgImg{
+    background-position: -86px -108px !important;
+  }
+  
+  .priceArea .left {
+    width: 66px;
+    height: 20px;
+    border: 1px solid #aaa;
+    margin-top: 8px;
+    position: relative;
+    margin-left: 6px;
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+  
+  .priceArea input {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0px;
+  }
+  
+  .priceArea .right {
+    width: 66px;
+    height: 20px;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-right: 6px;
+    float: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+  
+  .priceArea .sure {
+    width: 62px;
+    height: 28px;
+    overflow: hidden;
+    background-color: #fff;
+    border-top: none;
+    z-index: 9;
+    margin-top: 6px;
+    float: left;
+  }
+  
+  .priceArea .zhi {
+    width: 7px;
+    height: 0;
+    border-bottom: 1px solid #aaa;
+    float: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-top: 19px;
+    margin-left: 3px;
+    margin-right: 3px;
+    _margin-top: 0;
+  }
+  
+  .mainShop .line {
+    width: 100%;
+    height: 8px;
+    border-bottom: 2px solid;
+    border-color: rgb(196, 25, 33);
+  }
+  
+  .orders .page,
+  .orders_fixed .page {
+    height: 36px;
+    float: right;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-right: 10px;
+  }
+  
+  .orders .page .btn.prev,
+  .orders_fixed .page .btn.prev {
+    background-position: 0 -142px;
+    margin-top: 7px;
+    margin-left: 10px;
+  }
+  
+  .page .btn {
+    border: 0;
+  }
+  
+  .priceArea .sure a {
+    width: 45px;
+    height: 20px;
+    border: 1px solid #aaa;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 10px;
+    margin-top: 2px;
+    overflow: hidden;
+    float: right;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+  
+  .page p {
+    font-size: 14px;
+    float: right;
+    width: 20px;
+    line-height: 36px;
+  }

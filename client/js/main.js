@@ -7,7 +7,7 @@ $(() => {
                     `
                 let as = ele.rightimg.map(function (ele, i) {
                     return `
-                    <a href="#"
+                    <a href="http://127.0.0.1/code/moxi/client/list.html"
                     id="ContentPlaceHolder1_uc_1f_Activity_r_Floor_Right_floor_right_a_0" target="_blank"
                     class="f_pro_box ${i==0||i==5?"f_pro_big":""}">
                     <div class="f_pro_list">

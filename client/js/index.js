@@ -1,13 +1,13 @@
 $(() => {
     $.getJSON("../server/moxi-banner.json",
         function (data) {
-            let liHtmlLeft = data.map(ele => `<li><a class="hotSearch" href="#">${ele.liName}</a></li>`).join("");
+            let liHtmlLeft = data.map(ele => `<li><a class="hotSearch" href="http://127.0.0.1/code/moxi/client/list.html">${ele.liName}</a></li>`).join("");
             $(".inServerMenu").html(liHtmlLeft);
             let rightBox = data.map(function (ele, i) {
                 var h3Html = ele.rightBox.h3Text.map((ele, i) => {
                     return `
                     <h3>
-                        <a href="">
+                        <a href="http://127.0.0.1/code/moxi/client/list.html">
                             ${ele}
                             > </a>
                     </h3>
@@ -19,7 +19,7 @@ $(() => {
                 let aHtml = ele.rightBox.aText.map(function (ele) {
                     return ele.map(function (ele) {
                         return `
-                            <a href="#">
+                            <a href="http://127.0.0.1/code/moxi/client/list.html">
                             ${ele}
                             </a>&nbsp;
                             `

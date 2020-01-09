@@ -240,8 +240,8 @@ a,button{cursor:pointer;}
 	position: absolute;
 	top:159px;
 	padding-right: 20px;
-	z-index: 22;
 	background-color: #0f0f0f;
+	z-index: 888;
 }
 .inServerMenu li{
 	width:190px;
