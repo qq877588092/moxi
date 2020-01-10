@@ -62,4 +62,44 @@ $(() => {
 
         })
 
+
+    // $.ajax({
+    //     type: "get",
+    //     url: "http://127.0.0.1/code/jiuxian/src/jiuxian/server/subpage.php",
+    //     data: "data",
+    //     dataType: "json",
+    //     success: function (response) {
+    //         var p1 = new Subpage(response);
+    //         p1.init();
+    //     }
+    // });
+    // let p1 = new PlayBanner([
+    //     "http://img07.jiuxian.com/brandlogo/2019/1217/274b092fe1244e09950f651a12e92518.jpg",
+    //     "images/banner1.png",
+    //     "images/banner2.png",
+    // ]);
+    // p1.init();
+
+    //首页登录显示
+    let showText = localStorage.username ? ",欢迎您！" + localStorage.username : "请登录";
+    // let num = localStorage.num;
+    $(".login").text(showText);
+    if (localStorage.username) {
+        $(".register").text("注销");
+    } else {
+        $(".register").text("免费注册");
+    }
+    //点击注销或者注册跳转
+    $(".register").click(function () {
+        if ($(this).text() == "注销") {
+            localStorage.removeItem("username");
+            localStorage.removeItem("id");
+            window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/gwc.html";
+        } else {
+            window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/login.html";
+        }
+    })
+
+
+
 })

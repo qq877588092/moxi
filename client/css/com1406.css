@@ -166,6 +166,14 @@ a{ text-decoration:none; color:#333;  }
 .floor_title .floor_tab li{ float:left; width:150px; text-align:center; position:relative; padding:0; margin:0;}
 .floor_title .floor_tab li a{ color:#666;}
 .floor_title .floor_tab .cur a{ color:#f60;}
+.news:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
 
 /*
 #showcase{overflow:hidden}

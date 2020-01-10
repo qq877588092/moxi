@@ -325,6 +325,391 @@ a:hover {
 .sel-shop-iteam:hover {
 	border-color: rgb(221, 221, 221);
 }
-.on{
+
+.on {
 	background-color: #ccc;
+}
+
+/* 登录样式 */
+#login .login-login-panel {
+	width: 550px;
+	margin-left: 0%;
+	float: left;
+}
+
+#login .login-login-panel .tit {
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	color: #999999;
+	margin-top: 15px;
+	padding-bottom: 5px;
+}
+
+#login .login-login-panel table {
+	margin-top: 30px;
+}
+
+#login .table-tit {
+	width: 140px;
+	float: left;
+	padding-top: 20px;
+}
+
+#login .table-tit-regist {
+	width: 170px;
+	float: left;
+	padding-top: 20px;
+	text-align: right;
+}
+
+#login .login-right-register {
+	width: 50%;
+	float: left;
+	text-align: left;
+}
+
+#login .login-right-register .tit {
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	color: #999999;
+	margin-top: 15px;
+	padding-bottom: 5px;
+}
+
+#login .login-login-panel table td {
+	padding-bottom: 15px;
+	padding-left: 10px;
+	line-height: 100%;
+	vertical-align: bottom;
+}
+
+#login .login-right-register table {
+	margin-top: 30px;
+}
+
+#login .login-right-register table td {
+	padding-bottom: 15px;
+	padding-left: 10px;
+	line-height: 100%;
+	vertical-align: bottom;
+}
+
+
+
+
+
+
+#login .auth-pic img {
+	float: left;
+	margin-top: 5px;
+	padding-top: 5px;
+}
+
+#login .auth-pic a {
+	float: left;
+	color: #666666
+}
+
+#login .auth-pic a:hover {
+	float: left;
+	color: #333333;
+	text-decoration: underline;
+}
+
+#login .auth-pic a div {
+	margin-left: 2px;
+	padding-top: 5px;
+	margin-top: 5px;
+	height: 20px;
+	font-size: 12px;
+}
+
+#login .auth-check {
+	width: 40px;
+	height: 25px;
+	outline: none;
+	border: 0px;
+	float: left;
+}
+
+#login .auth-read {
+	line-height: 30px;
+	margin-left: 0px;
+	float: left;
+}
+
+
+
+#login .login-success {
+	width: 90%;
+	margin-left: 5%;
+	float: left;
+}
+
+#login .login-success .img {
+	margin-left: 200px;
+	width: 500px;
+	margin-top: 20px;
+	float: left;
+}
+
+#login .login-success .tex {
+	font-size: 30px;
+	color: #999999;
+	text-align: center;
+	margin-top: 20px;
+	float: left;
+	width: 100%;
+}
+
+#login .btns {
+	width: 60%;
+	margin-left: 320px;
+	float: left;
+	text-align: left;
+	margin-top: 20px;
+}
+
+#login .btns .item {
+	width: 200px;
+	float: left;
+	margin-right: 100px;
+}
+
+#login .disappear-line-login {
+	background-image: url(/images/comm/disappear-line-login.png);
+	width: 100%;
+	height: 2px;
+	float: left;
+	margin-top: 30px;
+}
+
+.regist-btn {
+	float: right;
+	width: 99%;
+	margin-left: 1%;
+	cursor: pointer;
+}
+
+.regist-btn div {
+	width: 99%;
+	height: 34px;
+	background-color: #FFFFFF;
+	text-align: center;
+	line-height: 34px;
+	border: #CCCCCC solid 1px;
+	color: #FFFFFF;
+	font-size: 17px;
+	color: #666666;
+}
+
+.regist-btn-long {
+	width: 100%;
+	float: left;
+	margin-right: 5px;
+}
+
+.regist-btn-long div {
+	width: 100%;
+	height: 50px;
+	background-color: #FFFFFF;
+	text-align: center;
+	line-height: 50px;
+	float: left;
+	border: #CCCCCC solid 1px;
+	color: #FFFFFF;
+	font-size: 17px;
+	color: #666666;
+}
+
+.regist-btn-long div img {
+	margin-top: 0px;
+	float: left;
+	margin-left: 175px;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.regist-btn-long div span {
+	margin-top: 0px;
+	float: left;
+	margin-left: 10px;
+}
+
+.regist-btn-long-no-icon {
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.regist-btn-long-no-icon div {
+	width: 100%;
+	height: 50px;
+	background-color: #FFFFFF;
+	text-align: center;
+	line-height: 50px;
+	float: left;
+	border: #CCCCCC solid 1px;
+	color: #FFFFFF;
+	font-size: 17px;
+	color: #666666;
+}
+
+.regist-btn-long-no-icon div span {}
+
+.round-input {
+	width: 380px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #CACACA;
+	outline: none;
+	border: #FFFFFF solid 0px;
+	padding-left: 20px;
+	color: #FFF;
+	font-size: 15px;
+}
+
+.square-input {
+	width: 420px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #FFFFFF;
+	border: #cccccc solid 1px;
+	padding-left: 20px;
+	color: #666666;
+	font-size: 15px;
+}
+
+.square-input-short {
+	width: 310px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #FFFFFF;
+	border: #cccccc solid 1px;
+	padding-left: 20px;
+	color: #666666;
+	font-size: 15px;
+}
+
+.short-round-input {
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #CACACA;
+	outline: none;
+	border: #FFFFFF solid 0px;
+	padding-left: 20px;
+	color: #666666;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+.short-square-input {
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #FFFFFF;
+	border: #ccc solid 1px;
+	padding-left: 20px;
+	color: #666666;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+.square-input-100 {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #CACACA;
+	outline: none;
+	border: #FFFFFF solid 0px;
+	color: #FFF;
+	font-size: 15px;
+}
+
+.short-square-sel {
+	width: 205px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #FFFFFF;
+	border: #ccc solid 1px;
+	color: #666666;
+	font-size: 20px;
+	line-height: 40px;
+	outline: none;
+}
+
+.short-square-sel-third {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #FFFFFF;
+	border: #ccc solid 1px;
+	color: #666666;
+	font-size: 20px;
+	line-height: 40px;
+	outline: none;
+}
+
+.sp-login_reg {
+	clear: both;
+}
+
+.login-nav-tab {
+	width: 250px;
+	margin: 0 auto;
+	margin-top: 15px;
+	text-align: center;
+	padding-left: 50px;
+}
+
+.login-nav-tab li {
+	width: 100px;
+	float: left;
+	line-height: 30px;
+	border: solid 1px #ddd;
+}
+
+.login-nav-tab li a {
+	line-height: 30px;
+	display: block;
+	width: 100%;
+	color: #555;
+}
+
+.login-nav-tab .selected {
+	background: #EC8D36;
+	color: #fff;
+	border: solid 1px #EC8D36;
+}
+
+.login-nav-tab .selected a {
+	color: #fff;
+}
+
+.tdyzm{
+	position: relative;
+}
+#captcha1 {
+	z-index: 5;
+	position: absolute;
+	top: 0px;
+	left: 132px;
+	color: #666;
+}
+.djyzm{
+	position: absolute;
+	display: inline-block;
+	top: 12px;
+	left: 222px;
+}
+#spcode{
+	border: 0;
+	padding-left: 0px;
+}
+.activeColor{
+	color: red;
 }

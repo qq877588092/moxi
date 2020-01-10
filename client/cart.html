@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +8,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/main.css?v=2" />
-    <link href="css/com1406.css?v=1" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/com1406.css">
     <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/pay.css">
+    <link rel="stylesheet" href="css/hyb-com.css">
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/banner.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/bannerSmall.js"></script>
+    <script src="js/show.js"></script>
+    <script src="js/cart.js"></script>
 </head>
+
 <body>
     <div class="sideNav" id="f_title_top">
         <div class="insideNav">
             <ul class="insideNavLeft">
-                <li><a class="home" href="./moxi.html">首页</a></li>
-                <li><a class="collect" href="javascript:void(0);">
+                <li><a class="home" href="http://www.moximoxi.net">首页</a></li>
+                <li><a class="collect" href="javascript:void(0);" onclick="AddFavorite('我的网站',location.href)">
                         收藏摩西</a></li>
                 <li><a class="attention gzmx" href="#">关注摩西<img src="images/code_01.png" alt="关注摩西" class="code"></a>
                 </li>
@@ -91,7 +92,7 @@
                     <li>
                         <a target="_blank" href="http://www.moximoxi.net/XhList.aspx?Stock=1">日本现货</a>
                     </li>
-                    <li class='moxiclub'><a target="_blank"
+                    <li class='moxiclub' onclick="window.open('http://club.moximoxi.net');"><a target="_blank"
                             href="http://club.moximoxi.net"></a>
                     </li>
                     <li><a target="_blank" href="http://huodong.moximoxi.net/SearchRakuten.aspx">
@@ -105,7 +106,7 @@
                 </ul>
             </div>
             <!-- 左侧导航栏开始 -->
-            <div class="serverMenu" style="display: block;">
+            <div class="serverMenu" style="display: none;">
                 <ul class="inServerMenu">
                 </ul>
             </div>
@@ -114,174 +115,138 @@
             </div>
         </div>
     </div>
-    <div class="main">
-        <div class="ban_wrap">
-            <div class="banner">
-                <div class="inBanner">
-                    <!-- 轮播图开始 -->
-                    <div class="bannerMain">
-                        <div class="box"></div>
+
+    <!-- 内容区 -->
+    <div class="main pay-main">
+        <div id="buycart-content" style="padding-top: 35px;">
+            <div id="buycart_loading" style="line-height: 55px; text-align: center; display: none;">
+                加载中....
+            </div>
+            <div id="buycartlist">
+                <div id="buycart_GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="buycartbox cart-main">
+                    <div class="lightBg cart-thead">
+                        <div class="tit column t-checkbox"><span class=""></span></div>
+                        <div class=" column t-goods">商品</div>
+                        <div class="tit_price column t-price">价格</div>
+                        <div class="tit_procount column t-quantity">数量</div>
+                        <div class="tit_proprice column t-sum">小计(元)</div>
+                        <div class="tit_action column t-action">操作</div>
+                        <div class="clr"></div>
                     </div>
-                    <div class="smallBanner">
-                        <div class="smallBannerT">
-                            <a title="日本进口保健" target="_blank" href="http://www.moximoxi.net/XhList.aspx?ProClassID=426">
-                                <img alt="日本进口保健" width="200" height="200" src="images/86636218225114690830.png" />
-                            </a>
+                    <div class="cart-item-list">
+                        <div class="item item-list">
+                            <div class="item-s-form">
+                                <div class="cart-checkbox" style="display:none;"><input childcount="0"
+                                        buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="checkbox-choose" type="checkbox"
+                                        value="44537"></div>
+                                <div class="p-goods cell" style="margin-left: 20px;">
+                                    <div class="pic p-img"><a href="http://goods0.moximoxi.net/goods-44537.html"><img
+                                                src="http://images.moximoxi.com/uploads/pro158image/201505141149027050.jpg"></a>
+                                    </div>
+                                    <div class="proname p-msg"><a
+                                            href="http://goods0.moximoxi.net/goods-44537.html">【日本直邮】贝亲/Pigeon
+                                            奶嘴K类型M号（圆孔）一个</a>
+                                        <div class="tips"></div>
+                                    </div>
+                                </div>
+                                <div class=" p-price cell"><em class="p-m">48.32</em> </div>
+                                <div class="procount_new p-quantity cell">
+                                    <div class="wrap-input"> <a href="javascript:void(0);" class="btn-reduce "
+                                            cartkey="44537">-</a> <input class="buy-num" type="text" cartkey="44537"
+                                            value="1" count="1"> <a href="javascript:void(0);" class="btn-add "
+                                            cartkey="44537">+</a> </div>
+                                </div>
+                                <div class=" p-sum cell"> <em>48.32</em>元</div>
+                                <div class=" p-action cell"> <a href="javascript:;"
+                                        onclick="MX.Goods.Collect('44537',0);">移入收藏夹</a> <a class="btn-delete"
+                                        href="javascript:;" cartkey="44537">删除</a> </div>
+                                <div class="clr"></div>
+                            </div>
                         </div>
-                        <div class="smallBannerT">
-                            <a title="调料" target="_blank"
-                                href="http://www.moximoxi.net/search.aspx?keyword=%E6%8B%8C%E9%A5%AD%E6%96%99&classid=undefined">
-                                <img alt="调料" width="200" height="200" src="images/85636264695283750612.png" />
-                            </a>
+                        <div class="item item-list">
+                            <div class="item-s-form">
+                                <div class="cart-checkbox" style="display:none;"><input childcount="0"
+                                        buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="checkbox-choose" type="checkbox"
+                                        value="44205"></div>
+                                <div class="p-goods cell" style="margin-left: 20px;">
+                                    <div class="pic p-img"><a href="http://goods0.moximoxi.net/goods-44205.html"><img
+                                                src="http://images.moximoxi.com/uploads/pro158image/201505141133156110.jpg"></a>
+                                    </div>
+                                    <div class="proname p-msg"><a
+                                            href="http://goods0.moximoxi.net/goods-44205.html">【日本直邮】贝亲/Pigeon 玻璃奶瓶专用奶瓶刷
+                                            尼龙清洁刷 2way</a>
+                                        <div class="tips"></div>
+                                    </div>
+                                </div>
+                                <div class=" p-price cell"><em class="p-m">40.94</em> </div>
+                                <div class="procount_new p-quantity cell">
+                                    <div class="wrap-input"> <a href="javascript:void(0);" class="btn-reduce "
+                                            cartkey="44205">-</a> <input class="buy-num" type="text" cartkey="44205"
+                                            value="1" count="1"> <a href="javascript:void(0);" class="btn-add "
+                                            cartkey="44205">+</a> </div>
+                                </div>
+                                <div class=" p-sum cell"> <em>40.94</em>元</div>
+                                <div class=" p-action cell"> <a href="javascript:;"
+                                        onclick="MX.Goods.Collect('44205',0);">移入收藏夹</a> <a class="btn-delete"
+                                        href="javascript:;" cartkey="44205">删除</a> </div>
+                                <div class="clr"></div>
+                            </div>
                         </div>
+                        <div class="item item-list">
+                            <div class="item-s-form">
+                                <div class="cart-checkbox" style="display:none;"><input childcount="0"
+                                        buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="checkbox-choose" type="checkbox"
+                                        value="44199"></div>
+                                <div class="p-goods cell" style="margin-left: 20px;">
+                                    <div class="pic p-img"><a href="http://goods0.moximoxi.net/goods-44199.html"><img
+                                                src="http://images.moximoxi.com/uploads/pro158image/201505141132524710.jpg"></a>
+                                    </div>
+                                    <div class="proname p-msg"><a
+                                            href="http://goods0.moximoxi.net/goods-44199.html">【日本直邮】贝亲/Pigeon
+                                            宝宝奶瓶果蔬清洁剂700ml</a>
+                                        <div class="tips"></div>
+                                    </div>
+                                </div>
+                                <div class=" p-price cell"><em class="p-m">43.8</em> </div>
+                                <div class="procount_new p-quantity cell">
+                                    <div class="wrap-input"> <a href="javascript:void(0);" class="btn-reduce "
+                                            cartkey="44199">-</a> <input class="buy-num" type="text" cartkey="44199"
+                                            value="1" count="1"> <a href="javascript:void(0);" class="btn-add "
+                                            cartkey="44199">+</a> </div>
+                                </div>
+                                <div class=" p-sum cell"> <em>43.8</em>元</div>
+                                <div class=" p-action cell"> <a href="javascript:;"
+                                        onclick="MX.Goods.Collect('44199',0);">移入收藏夹</a> <a class="btn-delete"
+                                        href="javascript:;" cartkey="44199">删除</a> </div>
+                                <div class="clr"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buycarttool cart-thead car-end">
+                        <div class="btnbox operation"> <a style="display:none;" class="btn-clearbuycart remove-batch"
+                                buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" type="button">删除选中的商品</a> <input
+                                class="btn-usecoupon" style="display:none" buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0"
+                                type="button" value="使用优惠券"> </div>
+                        <div class="comm-right"> <a class="btn-next submit-btn" href="javascript:;"
+                                buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" md5="B4BA131BFEAFD678F960E9842CC614E9">全部结算</a>
+                            <img class="submit-waiting"  alt=""
+                                style="float:right; vertical-align:middle;display:none;">
+                            <div class="price-sum"> <span class="couponstatus-box "></span><span
+                                    class="sumPrice">总价(不含运费)：<em>¥133.07</em></span> </div>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="check">
+                        <div style="width:550px; float:left;">
+                            <p class="col-2"><span class="shipping-box"></span></p>
+                        </div>
+                        <div class="clr"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="ban_kv_wrap" style="display: none;">
-            <div class="ban_kv_con w1200">
-                <div class="kv_list_wrap" id="J_kv_1">
-                    <div class="kv_list_con">
-                    </div>
-                    <div class="kv_dot_wrap">
-                    </div>
-                    <div id="right">
-                    </div>
-                    <div id="left">
-                    </div>
-                </div>
-                <div class="my_notice">
-                </div>
-            </div>
-        </div>
-        <div class="w1200">
-            <div class="buy_info_wrap" style="display: none;">
-            </div>
-        </div>
-        <div class="main_con w1200">
-            <!--限时抢购 -->
-            <div class="tab_con" style="display: none;">
-            </div>
-            <!--限时抢购  结束-->
-            <!-- hot sales开始 -->
-            <div class="hotSales">
-                <ul class="inHotSales">
-                    <li class="hot"><a target="_blank" href="http://goods0.moximoxi.net/goods-28574.html">
-                            <img width="190" height="150" src="images/hotsale.png" alt="" /></a></li>
-                    <li class="hotPic"><a title="母亲节碧柔防晒霜" target="_blank"
-                            href="http://goods0.moximoxi.net/goods-63794.html">
-                            <img alt="母亲节碧柔防晒霜" width="251" height="148" src="images/85637000770621247291.jpg" />
-                        </a></li>
-                    <li class="hotPic"><a title="日本品牌名表" target="_blank"
-                            href="http://www.moximoxi.net/search.aspx?keyword=%E3%80%90EMS%E5%8C%85%E9%82%AE%E5%8C%85%E7%A8%8E%E3%80%91&classid=undefined">
-                            <img alt="日本品牌名表" width="251" height="148" src="images/85636928354980751282.jpg" />
-                        </a></li>
-                    <li class="hotPic"><a title="母婴导航" target="_blank"
-                            href="http://www.moximoxi.net/search.aspx?keyword=%E5%8C%85%E9%82%AE%E3%80%91%E3%80%90%E9%A6%99%E6%B8%AF%E7%8E%B0%E8%B4%A7%E3%80%91MAMA%26KIDS&classid=undefined">
-                            <img alt="母婴导航" width="251" height="148" src="images/85636928355040907532.jpg" />
-                        </a></li>
-                    <li class="hotPic"><a title="顺丰冷链" target="_blank"
-                            href="http://www.moximoxi.net/search.aspx?keyword=%E3%80%90%E9%A1%BA%E4%B8%B0%E5%8C%85%E9%82%AE%E3%80%91%E3%80%90%E4%B8%AD%E5%9B%BD%E7%8E%B0%E8%B4%A7%E3%80%91&classid=undefined">
-                            <img alt="顺丰冷链" width="251" height="148" src="images/85636928355093876282.jpg" />
-                        </a></li>
-                </ul>
-            </div>
-            <!-- hot sales结束 -->
-            <!-- band sales开始 -->
-            <div class="bandSales">
-                <div class="inBandSales">
-                    <h2>
-                        <a href="">品牌热卖<span> ブランドの使い方 </span></a>
-                    </h2>
-                    <div class="inBandSalesMain">
-                        <div class="inBandSalesMainL">
-                            <a title="卡西欧" target="_blank"
-                                href="http://www.moximoxi.net/search.aspx?keyword=%E3%80%90EMS%E5%8C%85%E9%82%AE%E5%8C%85%E7%A8%8E%E3%80%91%E5%8D%A1%E8%A5%BF%E6%AC%A7%2FCASIO&classid=undefined">
-                                <img alt="卡西欧" width="190" height="238" src="images/85636592331959807492.jpg" />
-                            </a>
-                        </div>
-                        <div class="inBandSalesMainC">
-                            <ul class="band">
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E5%91%B3%E4%B9%8B%E7%B4%A0&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591453100432488.jpg"
-                                            alt="味之素" /></a> </li>
-                                <li><a href="http://www.moximoxi.net/search.aspx?keyword=ECC&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591453726213738.jpg"
-                                            alt="ECC" /></a> </li>
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E6%97%A5%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%81%A5%E5%BA%B7&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591458931838738.jpg"
-                                            alt="日本第一健康" /></a> </li>
-                                <li><a href="http://www.moximoxi.net/search.aspx?keyword=TAISHAPPU&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591460782151238.jpg"
-                                            alt="TAISHAPPU" /></a> </li>
-                                <li><a href="http://www.moximoxi.net/search.aspx?keyword=bcl&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591453848244988.jpg"
-                                            alt="bcl" /></a> </li>
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E8%8A%B1%E7%8E%8B&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591451285119988.png"
-                                            alt="花王" /></a> </li>
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E6%98%8E%E6%B2%BB&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591462192776238.jpg"
-                                            alt="明治" /></a> </li>
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E8%B1%A1%E5%8D%B0&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591450238244988.png"
-                                            alt="象印" /></a> </li>
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E8%B5%84%E7%94%9F%E5%A0%82&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591453945901238.jpg"
-                                            alt="资生堂" /></a> </li>
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E8%8A%B3%E7%8F%82&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591453995432488.png"
-                                            alt="芳珂" /></a> </li>
-                                <li><a
-                                        href="http://www.moximoxi.net/search.aspx?keyword=%E4%BA%AC%E7%93%B7&classid=undefined">
-                                        <img width="201" height="79" src="images/85636591454034494988.png"
-                                            alt="京瓷" /></a> </li>
-                                <li><a href="http://www.moximoxi.net/search.aspx?keyword=高丝&classid=undefined">
-                                        <img width="201" height="79" src="images/1636080674199779922.png"
-                                            alt="高丝" /></a> </li>
-                            </ul>
-                        </div>
-                        <div class="inBandSalesMainR">
-                            <a title="精工" target="_blank"
-                                href="http://www.moximoxi.net/search.aspx?keyword=%E3%80%90EMS%E5%8C%85%E9%82%AE%E5%8C%85%E7%A8%8E%E3%80%91%E7%B2%BE%E5%B7%A5%2FSEIKO&classid=undefined">
-                                <img alt="精工" width="200" height="238" src="images/85636592331989026242.jpg" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- band sales结束 -->
-            <!--活动推荐-->
-            <div class="f_fast_link" style="display: none;">
-                <a class="use-smooth-scrool" href="#f_title_1">
-                    活动推荐</a>
-                <a class="use-smooth-scrool" href="#f_title_2">
-                    保税区闪送</a>
-                <a class="use-smooth-scrool" href="#f_title_3">
-                    食品保健</a>
-                <a class="use-smooth-scrool" href="#f_title_4">
-                    母婴用品</a>
-                <a class="use-smooth-scrool" href="#f_title_5">
-                    美妆个护</a>
-                <a class="use-smooth-scrool" href="#f_title_6">
-                    家居日化</a>
-                <a class="use-smooth-scrool" href="#f_title_7">
-                    数码电子</a>
-                <a class="use-smooth-scrool" href="#f_title_8">
-                    箱包首饰</a>
-                <a class="use-smooth-scrool" href="#f_title_9">
-                    成人用品</a>
-                <a href="#f_title_top">回到顶部</a>
             </div>
         </div>
     </div>
+
     <div class="footer">
         <div class="inFooter">
             <div class="inFooterInfo">
@@ -374,8 +339,8 @@
                 <span>（周一到周五 09:00~18:00）</span> <span class="tel">400-660-6366</span>
                 <h3>
                     在线客服</h3>
-                <span style="padding-bottom: 45px;">（周一到周五 09:00~18:00）</span> <a href="javascript:;"
-                    title="联系客服" target="_blank">
+                <span style="padding-bottom: 45px;">（周一到周五 09:00~18:00）</span> <a href="javascript:;" title="联系客服"
+                    target="_blank">
                     <img src="" alt="" title="联系客服" /></a>
                 <span>周六周日请发邮件至cs@moximoxi.net</span>
                 <span>我们会尽快解决您的问题</span>
@@ -430,51 +395,6 @@
             </div>
         </div>
     </div>
-    <script>
-
-        // //获取数据
-        // var arr = [];
-        // for (i = 0; i < $(".f_title").length; i++) {
-        //     var obj = {};
-        //     obj.liName = $(".f_title b")[i].innerText.trim();
-        //     var arr1 = [];
-        //     $($(".f_con_slider_con")[i]).find("img").map(function (i, e) {
-        //         arr1.push(e.src);
-        //     });
-        //     var arr2=[];
-        //     $($(".f_con_r")[i]).find("img").map(function (i, e) {
-        //         arr2.push(e.src);
-        //     });
-        //     obj.rightimg = arr2;
-        //     obj.bannerimg = arr1;
-        //     arr.push(obj);
-        // }
-        // console.log(arr);
-        // JSON.stringify(arr);
-        // for (i = 0; i < $(".f_title").length; i++) {
-        //     var obj = {
-        //         liName:"",
-        //             h3Text:"",
-        //             aText:""
-        //         }
-        //     };
-        //     var arr1 = [];
-        //     var item1=[];
-        //     $($(".inServerMenuB")[i]).find("h3").map(function (i, ele) {
-        //         arr1.push(ele.innerText.trim());
-        //         var arr2 = [];
-        //         $(this).siblings("a").map(function (i, ele) {
-        //             arr2.push(ele.innerText.trim());
-        //         })
-        //         item1.push(arr2);
-        //     })
-        //     obj.liName = $(".inServerMenu li")[i].innerText.trim();
-        //     obj.rightBox.h3Text = arr1;
-        //     obj.rightBox.aText = item1;
-        //     arr.push(obj);
-        // }
-        // console.log(arr);
-        // JSON.stringify(arr);
-    </script>
 </body>
+
 </html>

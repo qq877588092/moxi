@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/main.css?v=2" />
+    <link rel="stylesheet" href="css/com1406.css">
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/show.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/show.js"></script>
+</head>
+
+<body>
+    <div class="sideNav" id="f_title_top">
+        <div class="insideNav">
+            <ul class="insideNavLeft">
+                <li><a class="home" href="http://www.moximoxi.net">首页</a></li>
+                <li><a class="collect" href="javascript:void(0);" onclick="AddFavorite('我的网站',location.href)">
+                        收藏摩西</a></li>
+                <li><a class="attention gzmx" href="#">关注摩西<img src="images/code_01.png" alt="关注摩西" class="code"></a>
+                </li>
+            </ul>
+            <ul class="insideNavRight">
+                <li class="welcome">您好，欢迎来到摩西！</li>
+                <li id="toolbar_left">
+                    <a class="login" href="http://www.moximoxi.net/login.aspx">登录</a>&nbsp;
+                    <a class="register" href="http://www.moximoxi.net/login.aspx">免费注册</a>
+                </li>
+                <li id="toolbar_right"></li>
+                <li><a class="Shopping" href="http://www.moximoxi.net/buycart.aspx">
+                        购物车 <strong style="font-weight:700;" id="head_car_count"></strong> 件商品</a></li>
+                <li><a class="Online_service" href="http://www.moximoxi.net/CustomSupport.aspx">
+                        在线客服 400-660-6366</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="topSmallBanner">
+        <a class="topSmallBannerClose" href="javascript:void(0);" target="_self" title="关闭">x</a>
+    </div>
+    <div class="header">
+        <div class="inHeader">
+            <div class="inHeaderT">
+                <div class="logo">
+                    <h1>
+                        <a href="http://www.moximoxi.net" title="摩西网">摩西网</a></h1>
+                    <span></span>
+                </div>
+                <div class="search">
+                    <div style="line-height: 24px; font-size: 12px; color: #C70904;">
+                        日元汇率：0.064504
+                        （100日元＝6.4504元）
+                    </div>
+                    <div class="searchTop">
+                        <input id="txt-header-search" class="searchTopL" type="text" placeholder="" />
+                        <button id="btn-header-search" class="searchTopR">
+                            搜 索</button>
+                    </div>
+                    <div class="searchLinks">
+                        <span>热门搜索：</span> <a href="http://www.moximoxi.net/search.aspx?keyword=酵素&classid=0">
+                            酵素 </a><a href="http://www.moximoxi.net/search.aspx?keyword=白色恋人&classid=0">
+                            白色恋人 </a><a href="http://www.moximoxi.net/search.aspx?keyword=胶原蛋白&classid=0">
+                            胶原蛋白 </a><a href="http://www.moximoxi.net/search.aspx?keyword=象印&classid=0">
+                            象印 </a><a href="http://www.moximoxi.net/search.aspx?keyword=MTG&classid=0">
+                            MTG </a><a href="http://www.moximoxi.net/search.aspx?keyword=SONY&classid=0">
+                            SONY </a><a href="http://www.moximoxi.net/search.aspx?keyword=膳魔师&classid=0">
+                            膳魔师 </a><a href="http://www.moximoxi.net/search.aspx?keyword=花王&classid=0">
+                            花王 </a><a href="http://www.moximoxi.net/search.aspx?keyword=大王&classid=0">
+                            大王 </a>
+                    </div>
+                </div>
+                <div class="searchRight">
+                </div>
+            </div>
+            <div class="nav">
+                <span id="navAll">商品全部分类</span>
+                <ul class="inNav">
+                    <li><a target="_blank" href="http://www.moximoxi.net/">首页</a> </li>
+                    <li><a target="_blank" href="http://huodong.moximoxi.net/collectnew.aspx">
+                            <img src=" images/3013191871.gif" style="position: relative;top:-8px;" alt="保税区闪送" />
+                        </a> </li>
+                    <li style="display: none"><a target="_blank" href="http://huodong.moximoxi.net/kuajingtuan.aspx">
+                            跨境团</a> </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/XhList.aspx?Stock=2">国内现货</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.moximoxi.net/XhList.aspx?Stock=1">日本现货</a>
+                    </li>
+                    <li class='moxiclub' onclick="window.open('http://club.moximoxi.net');"><a target="_blank"
+                            href="http://club.moximoxi.net"></a>
+                    </li>
+                    <li><a target="_blank" href="http://huodong.moximoxi.net/SearchRakuten.aspx">
+                            乐天专区</a> </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/daigou.aspx">代购/代拍</a>
+                    </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/fengjiao">ECC蜂胶</a>
+                    </li>
+                    <li><a target="_blank" href="http://www.moximoxi.net/LeaveWord.aspx">
+                            留言板</a> </li>
+                </ul>
+            </div>
+            <!-- 左侧导航栏开始 -->
+            <div class="serverMenu" style="display: none;">
+                <ul class="inServerMenu">
+                </ul>
+            </div>
+            <!-- 展开详细列表具体分类 -->
+            <div class="inServerMenuList">
+            </div>
+        </div>
+    </div>
+    <!-- 内容区 -->
+    <div class="main">
+        <div class="hyb-detail-box news">
+            <div class="hyb-dinfo-box news">
+                <!-- 图片展示区 -->
+                <div class="hyb-dinfo-box-left">
+                    <div class="goodspage-huodong-icon-0" style="position: absolute; top: 0px; left: 0px; z-index: 1;">
+
+                    </div>
+
+                    <div class="hyb-p-pic dpBinImg left">
+                        <img class="jqzoom"
+                            src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/41579/36/1094/201211/5cc51607E2e6dcf1b/147afe82fc5af7e8.jpg"
+                            jqimg="http://img09.jiuxian.com/2017/0803/6ce2bdc8ad8e4c59936661b86301e77c6.jpg" alt="">
+                        <div class="move" style=" display: none"></div>
+                    </div>
+
+                    <div class="right" style=" display: none">
+                        <ul>
+
+                            <li>
+                                <img src="https://img14.360buyimg.com/n0/jfs/t1/41579/36/1094/201211/5cc51607E2e6dcf1b/147afe82fc5af7e8.jpg" style="">
+                                </li>
+
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0);" class="hyb-pic-leftBtn hyb-com-picBtn"></a><a
+                        href="javascript:void(0);" class="hyb-pic-rightBtn hyb-com-picBtn"></a>
+                </div>
+                <!--end hyb-dinfo-box-left-->
+                <div class="hyb-dinfo-box-center">
+                    <dl>
+                        <dt>
+                            <h1>
+                                【日本直邮】钥匙咖啡滴水on？咖啡礼品No 50</h1>
+                        </dt>
+                        <!-- 属性加载区 -->
+                        <dd class="hyb-p-price">
+                            <ul>
+                                <li>价格：¥<span class="hyb-price-money" id="em-pricecny">507.79</span>
+
+                                </li>
+                                <li>市场价：<span class="hyb-price-ago">¥507.79</span></li>
+                            </ul>
+                        </dd>
+                        <dd class="hyb-p-place">
+                            <ul>
+                                <li class="hyb-p-li1">品牌：</li>
+                                <li class="hyb-p-li2">产地：日本</li>
+                                <li class="hyb-p-li3">所属国：日本</li>
+                            </ul>
+                        </dd>
+                        <dd class="hyb-pcom-dd">
+                            <div class="hyb-p-dt">
+                                编&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：
+                            </div>
+                            36301(B003ESMFT4)
+                        </dd>
+                        <dd class="hyb-pcom-dd" id="tr_collectnew_tax" style="display: none;">
+                            <div class="hyb-p-dt">
+                                税&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;率：
+                            </div>
+                            <span id="taxtipbox"><b
+                                    style="margin: 0px 15px 0px 0px; color: #111111;">以上价格不含税[税率:10%]</b><a
+                                    href="http://www.moximoxi.net/HelpItem-24.html" target="_blank"> 查看集装功略</a></span>
+                        </dd>
+                        <dd class="hyb-pcom-dd hyb-p-has" id="table_201409301623">
+                            <div class="hyb-p-dt">
+                                库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存：
+                            </div>
+                            <div class="hyb-p-dd" id="goods-stock">
+                                <div id="div-stock-defalut" style="display: none;">
+                                    剩余 <em id="em-defaultstockcount" class="hyb-remainder">100</em> 件
+                                </div>
+                                <span id="div-stock-pur" style="" class="btn-stock hyb-p-active" stock-type="0">日本发货
+                                    <b class="hyb-right-red"></b><em id="em-purstockcount"
+                                        style="display: none;">100</em>
+                                </span><span id="div-stock-cn" style="display: none;" class="btn-stock"
+                                    stock-type="2">上海发货<b class="hyb-right-red"></b> <em id="em-chinastockcount"
+                                        style="display: none;">0</em></span><span id="div-stock-jp_1"
+                                    style="display: none;" class="btn-stock" stock-type="1">大阪发货 <b
+                                        class="hyb-right-red"></b><em id="em-jpstockcount"
+                                        style="display: none;">0</em></span>
+
+                            </div>
+                        </dd>
+                        <dd id="shop-list" class="hyb-pcom-dd hyb-p-set">
+                            <div class="hyb-p-dt">
+                                配送信息：
+                            </div>
+                            <div class="hyb-p-dd">
+
+                                <div id="goods-ems" style="">
+                                    <span showid="0-a" id="btn-ems" style="display: inline-block;"
+                                        showhtml="海外直邮，发货后约3~10天到货" class="btn-stock curr" href="javascript:void(0);">
+
+                                        <em id="ems">海外直邮</em><b class="hyb-right-red"></b>
+                                    </span>
+                                    <span showid="2-a" id="btn-air" style="display: inline-block;"
+                                        showhtml="经济航空运，发货后约7~20天到货" class="btn-stock" href="javascript:void(0);">
+
+                                        <em id="air">经济航空运</em><b class="hyb-right-red"></b>
+                                    </span>
+                                    <span showid="3-a" id="btn-ship" style="display: inline-block;"
+                                        showhtml="海外直邮，发货后约2~3月到货" class="btn-stock" href="javascript:void(0);">
+                                        <em id="ship">海运</em><b class="hyb-right-red"></b>
+                                    </span>
+                                    <span showid="9-a" id="btn-dps" showhtml="特惠直邮（DPS），发货后约9~11天到货" class="btn-stock"
+                                        href="javascript:void(0);" style="display: inline-block;">
+                                        <em id="dps">特惠直邮</em><b class="hyb-right-red"></b>
+                                    </span>
+                                    <span showid="4-0" id="btn-yt" style="display: none;" showhtml="国内快递，发货后约2~3天到货"
+                                        class="btn-stock" href="javascript:void(0);">
+                                        <em id="Span3">圆通</em><b class="hyb-right-red"></b>
+                                    </span>
+                                    <span showid="4-1" id="btn-sf" style="display: none;" showhtml="国内快递，发货后约1~3天到货"
+                                        class="btn-stock" href="javascript:void(0);">
+                                        <em id="sf">顺丰</em><b class="hyb-right-red"></b>
+                                    </span>
+                                    <span showid="6-2-0" id="btn-CNems" style="display: none;"
+                                        showhtml="国内保税区直发，发货后约3~4天到货" class="btn-stock" href="javascript:void(0);">
+                                        <em id="Span1">中国邮政</em><b class="hyb-right-red"></b>
+                                    </span>
+                                    <span showid="6-4-0" id="btn-IsParcel" style="display: none;"
+                                        showhtml="国内保税区直发，发货后约3~7天到货" class="btn-stock" href="javascript:void(0);"><em
+                                            id="Span8">邮政小包</em><b class="hyb-right-red"></b></span>
+                                    <span showid="6-2-1" id="btn-IsCNems" style="display: none;"
+                                        showhtml="国内保税区直发，到货立即发货，以每次预售通知时间为准" class="btn-stock"
+                                        href="javascript:void(0);"><em id="Span4">中国邮政</em><b
+                                            class="hyb-right-red"></b></span>
+                                    <span showid="6-1-1" id="btn-IsCNsf" style="display: none;"
+                                        showhtml="国内保税区直发，到货立即发货，以每次预售通知时间为准" class="btn-stock"
+                                        href="javascript:void(0);"><em id="Span5">顺丰</em><b
+                                            class="hyb-right-red"></b></span>
+                                </div>
+                                <div class="shipping_tag">
+                                </div>
+                                <div id="goods-ship" style="display: none;">
+                                    <b id="ship_tag" class="ship_tags">海外直邮海外直邮提示 </b>
+                                </div>
+                                <div id="goods-time">
+                                    <a id="btn-time" href="javascript:void(0);">海外直邮，发货后约3~10天到货</a>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>
+
+                        </dd>
+                        <dd class="hyb-pcom-dd" id="collectnew_goods_attr"></dd>
+                        <dd class="hyb-pcom-dd hyb-p-total">
+                            <div class="hyb-p-dt" id="tr_buycount">
+                                数量信息：
+                            </div>
+                            <div class="hyb-p-dd">
+                                <a href="javascript:void(0)" class="hyb-btn-reduce"></a>
+                                <input id="input-buycount" type="text" class="hyb-total-txt" value="1"
+                                    onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                    onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                                    style="border: 1px solid rgb(51, 51, 51); height: 25px;">
+                                <a href="javascript:void(0)" class="hyb-btn-add"></a>
+                            </div>
+                        </dd>
+                        <dd class="hyb-pcom-dd">
+                            <div class="hyb-p-dt">
+                                销&nbsp;量&nbsp;：
+                            </div>
+                            486
+                        </dd>
+                        <dd class="hyb-pcom-dd hyb-p-btn">
+                            <div id="div_201409301635" class="hyb-p-dd">
+                                <a id="btn-buycart2s" href="javascript:void(0)" class="btn-append"
+                                    style="display: inline-block;">
+                                    <img src="images/car-btn.png" align="">加入购物车</a> <a id="btn-buycart1s"
+                                    href="javascript:void(0)" class="btn-buy" style="display: inline-block;">立刻购买</a> <a
+                                    id="btn-stocknotify" href="javascript:;" style="display: none;">到货通知</a>
+                            </div>
+                        </dd>
+                        <div class="hyb-warp-share">
+                            <div class="hyb-p-share">
+
+                                <a class="hyb-btn-praise goods-button-love" href="javascript:;"><b></b>赞（0）</a>
+                                <a class="hyb-btn-praise goods-button-fav" href="javascript:;"
+                                    onclick="MX.Goods.Collect('36301',0)">加入收藏</a> <a class="hyb-btn-share"
+                                    href="javascript:;" style="position: relative;">优惠活动
+                                    <div id="div201409261504"
+                                        style="position: absolute; border-radius: 5px; display: none; text-align: center; left: -100px; top: 30px; width: 240px; padding: 15px; border: solid 5px #E98450; background: #fff;">
+                                        <div style="line-height: 18px;">
+                                            打开微信扫描二维码关注摩西，及时掌握最新优惠信息，还支持微信下单哦！
+                                        </div>
+                                        <img src="http://images.moximoxi.net/details/201405/1410035560.jpg" width="200"
+                                            height="200">
+                                        <div>
+                                            摩西官方微信：moximoxishopping
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </dl>
+
+                </div>
+                <!--end hyb-dinfo-box-center-->
+                <div class="hyb-dinfo-box-right">
+                    <div class="rightT">
+                        <img src="http://images.moximoxi.com/details/201511/3013381460.png" alt="摩妞"><span>摩妞点评</span>
+                        <p>
+                            -
+                        </p>
+                    </div>
+                    <div class="rightB" style="margin:20px 0 50px 0">
+                        <img src="http://images.moximoxi.com/details/201511/3013395486.png" alt="正品保障">
+                    </div>
+                    <div class="rightB">
+                        <a href="javascript:void(0)"
+                            onclick="window.open('http://b.qq.com/webc.htm?new=0&amp;sid=4006606366&amp;eid=218808P8z8p8R8z8R8R8P&amp;o=moximoxi.net&amp;q=7&amp;ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');">
+                            <img src="http://images.moximoxi.com/details/201511/3013394858.png" alt="联系客服">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clr">
+            </div>
+            <div class="feature">
+                <div class="container">
+                    <a href="http://www.moximoxi.net/fengjiao"><img src="http://www.moximoxi.net/images/ECC蜂胶.jpg"
+                            alt="摩西网专业日本海淘日本直采正品保障无忧退货" title="摩西网专业日本海淘日本直采正品保障无忧退货"></a>
+                    <img src="http://images.moximoxi.com/details/201509/1516055389.png" alt="摩西网专业日本海淘日本直采正品保障无忧退货"
+                        title="摩西网专业日本海淘日本直采正品保障无忧退货">
+                </div>
+            </div>
+            <div class=" hyb-product-detail details">
+                <div class="hyb-product-detail-tit">
+                    <ul class="inDetails">
+                        <li class="hyb-iteam-active">商品详情</li>
+
+                        <li>商品评论</li>
+                        <li>日淘FAQ</li>
+                    </ul>
+                    <div class="clr">
+                    </div>
+                </div>
+                <div class="hyb-warp-detailinfo">
+                    <div class="hyb-detailinfo" style="display: block;">
+                        <div class="hyb-detail-data">
+                            <h2>商品参数</h2>
+                            <dl>
+                                <dt>商品名称：</dt>
+                                <dd>
+                                    【日本直邮】钥匙咖啡滴水on？咖啡礼品No 50</dd>
+                                <dt>
+                                    产地：</dt>
+                                <dd>日本</dd>
+
+                                <dt>
+                                    品牌：</dt>
+                                <dd>-</dd>
+
+                                <dt>
+                                    品牌所属国：</dt>
+                                <dd>日本</dd>
+
+                                <dt>
+                                    条形码：</dt>
+                                <dd>-</dd>
+
+                            </dl>
+                            <div class="clr">
+                            </div>
+                        </div>
+                        <div class="hyb-warp-word">
+                            <div id="tr_collectnew_info" style="display: none;">
+                                以商品实际销售价格作为完税价格（征税基数），参照行邮税税率征收税款。先所有商品都要征税。消费者购买宁波跨境贸易电子商务进口商品，以“个人自用、合理数量”为原则，参照《海关总署公告2010年第43号（关于调整进出境个人邮递物品管理措施有关事宜）》要求，每次限值为2000元人民币，超出规定限值的，应按照货物规定办理通关手续。但单次购买仅有一件商品且不可分割的，虽超出规定限值，经海关审核确属个人自用的，可以参照个人物品规定办理通关手续。对于违反规定，超出个人自用合理数量购买的，系统将予以退单，情节严重的，将追究个人法律责任。
+                            </div>
+                        </div>
+                        <img src="http://ecx.images-amazon.com/images/I/5120ygObbeL.jpg"
+                            style="width: 500px; height: 500px;">
+                        <div class="bucket" id="productDescription">
+                            <div class="content">
+                                <h3 class="productDescriptionSource">&nbsp;</h3>
+
+                                <div class="productDescriptionWrapper">
+                                    「袋を開けた時の香り」「お湯を注いだ瞬間の香り」「カップから立ち上がる芳醇な香り」の3つの香りが楽しめるように徹底的にこだわった「ドリップオン」のギフトです。
+                                    <div class="emptyClear">&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="hyb-detailinfo hyb-detailinfo-dis">
+                    <div id="view-comment"></div>
+
+                </div>
+                <div class="hyb-detailinfo">
+                    <img src="http://images.moximoxi.com/details/201510/2911064724.jpg" alt="摩西网日本代购优势"
+                        title="摩西网日本代购优势">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="inFooter">
+            <div class="inFooterInfo">
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            购物指南</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-1.html" rel="nofollow">购物流程</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-2.html" rel="nofollow">会员介绍</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-3.html" rel="nofollow">订单状态</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-4.html" rel="nofollow">积分说明</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-5.html" rel="nofollow">常见问题</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-17.html" rel="nofollow">搜索小贴士</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-23.html" rel="nofollow">税则归类表</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            关于配送</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-6.html" rel="nofollow">配送方式</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-7.html" rel="nofollow">关于邮资</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-8.html" rel="nofollow">配送时间</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-9.html" rel="nofollow">关于关税</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            关于支付</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-20.html" rel="nofollow">网上银行</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-22.html" rel="nofollow">银联国际支付</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-26.html" rel="nofollow">银联在线支付</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-10.html" rel="nofollow">支付宝</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-12.html" rel="nofollow">常见支付问题</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            售后服务</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-13.html" rel="nofollow">服务承诺</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-14.html" rel="nofollow">售后保证</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-15.html" rel="nofollow">退款说明</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-16.html" rel="nofollow">日本节假日</a></dd>
+                </dl>
+                <dl class="inFooterList">
+                    <dt>
+                        <h3>
+                            相关信息</h3>
+                    </dt>
+                    <dd>
+                        <a href="http://www.moximoxi.net/CompanyProfile.aspx" rel="nofollow">关于摩西</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/ContactUs.aspx" rel="nofollow">联系我们</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/HelpItem-27.html" rel="nofollow">招贤纳士</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/privacypolicy.aspx" rel="nofollow">隐私保护</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/sitemap.html">网站地图</a></dd>
+                    <dd>
+                        <a href="http://www.moximoxi.net/rss.aspx">RSS订阅</a></dd>
+                </dl>
+            </div>
+            <div class="inFooterKefu">
+                <h3>
+                    客服热线</h3>
+                <span>（周一到周五 09:00~18:00）</span> <span class="tel">400-660-6366</span>
+                <h3>
+                    在线客服</h3>
+                <span style="padding-bottom: 45px;">（周一到周五 09:00~18:00）</span> <a href="javascript:;" title="联系客服"
+                    target="_blank">
+                    <img src="" alt="" title="联系客服" /></a>
+                <span>周六周日请发邮件至cs@moximoxi.net</span>
+                <span>我们会尽快解决您的问题</span>
+            </div>
+            <div class="inFootercode">
+                <img src="images/code.png" height="96" width="96" alt="" />
+                <h3>
+                    摩西网官方微信</h3>
+                <span>摩西网五周年中大促 关注微信千元现金券 抽奖等你拿！</span>
+            </div>
+        </div>
+        <div class="footService">
+            <div class="inFootService">
+            </div>
+        </div>
+        <div class="copyRight_con w1200">
+            <p>
+                <a target="_blank" href="http://www.miit.gov.cn/">浙ICP备19017342号</a> 摩西网版权所有 Copyright 2009-2019 All
+                Rights Reserved
+            </p>
+            <div class="brand_link">
+                <a target="_blank" href="http://www.moximoxi.net/HelpItem-10.html" rel="nofollow">
+                    <img src="images/foot_pic_04.png" alt="支付宝" title="支付宝">
+                </a>
+                <a target="_blank" href="http://www.moximoxi.net/HelpItem-22.html" rel="nofollow">
+                    <img src="images/foot_pic_03.png" alt="银联特约商户" title="银联特约商户">
+                </a>
+                <a target="_blank" href="http://www.moximoxi.net/ZJSBusiness.htm" rel="nofollow">
+                    <img src="images/1211023105.png" alt="浙江省网络工商" title="浙江省网络工商">
+                </a>
+                <a target="_blank" href="http://www.ectrustprc.org.cn/certificate.id/certificateb.php?id=20023544"
+                    rel="nofollow">
+                    <img src="images/foot_pic_01.png" alt="中国电子商务诚信单位" title="中国电子商务诚信单位">
+                </a>
+                <a target="_blank"
+                    href="http://ss.51honest.org/axbValidatePage.credit?action=detailCert&flag=company&creditCode=9992324113542718"
+                    rel="nofollow">
+                    <img src="images/foot_pic_02.png" alt="信用之星" title="信用之星">
+                </a>
+                <a target="_blank" href="http://haitao.smzdm.com" rel="nofollow">
+                    <img src="images/foot_pic_05.png" alt="什么值得买" title="信用之星">
+                </a>
+                <a target="_blank" href="http://www.lancichina.com" rel="nofollow">
+                    葡萄酒代理
+                </a>
+                <a target="_blank" href="http://www.1th1.com" rel="nofollow">
+                    危机公关
+                </a>
+                <a target="_blank" href="http://www.moximoxi.net/images/20190314195113.jpg" rel="nofollow">
+                    食品经营许可证
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
