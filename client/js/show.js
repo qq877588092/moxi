@@ -70,7 +70,7 @@ $(() => {
         // let mw = $(".right").width() / $(".right img").width() * $(".left").width();
         // let mh = $(".right").height() / $(".right img").height() * $(".left").height();
         // console.log(mw,mh);
-        
+
         // $(".move").css({
         //     width: mw,
         //     height: mh
@@ -127,57 +127,76 @@ $(() => {
         $(".right").css("display", "none");
     })
 
+    //拿list页面传来的数据渲染页面
+    let str = decodeURI(window.location.search); //接收url字符串
+    let arr = str.slice(1).split("&"); //切割成数组
+    let obj = {}; //创建空对象接收数组转换成对象
+    arr.forEach(function (ele, index) {
+        let data = ele.split("=");
+        let key = data[0];
+        let val = data[1];
+        obj[key] = val;
+    })
+    console.log(obj);
+
+    $(".jqzoom")[0].src = obj.src;
+    $(".hyb-dinfo-box-center h1").text(obj.name);
+    $("#em-pricecny").text(obj.price);
+    $(".hyb-price-ago").text(obj.discount);
+    // $(".right img")[0].src = "http://img07.jiuxian.com/2019/0710/12ef7ca49b644a16b55d45b1282413586.jpg";
 
 
     /* 实现点击添加商品到购物车的功能 */
 
-    // let showText = localStorage.phone ? localStorage.phone + ",欢迎你！" : "请登录";
-    // $(".topheadderLeft p").text(showText);
-    // if (localStorage.phone) {
-    //     $(".topheadderLeft a").text("注销");
-    // } else {
-    //     $(".topheadderLeft a").text("登录");
-    // }
+    //点击注销或者注册跳转
+    let showText = localStorage.username ? "欢迎您！" + localStorage.username : "请登录";
+    // let num = localStorage.num;
+    $(".login").text(showText);
+    if (localStorage.username) {
+        $(".register").text("注销");
+    } else {
+        $(".register").text("免费注册");
+    }
+    //点击注销或者注册跳转
+    $(".register").click(function () {
+        if ($(this).text() == "注销") {
+            localStorage.removeItem("username");
+            localStorage.removeItem("id");
+            // window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/gwc.html";
+        } else {
+            window.location.href = "./loginRegister.html";
+        }
+    })
+    $("#btn-buycart2s").click(function (e) {
+        /* 检查是否已经登录 ，如果没有登录那就跳转到登录页面*/
+        if (!localStorage.username) {
+            window.location.href = "./loginRegister.html";
+        }
+        /* 获取当前商品的ID */
+        let good_id = obj.good_id;
+        console.log(good_id);
 
-    // $(".topheadderLeft a").click(function () {
-    //     if ($(this).text() == "注销") {
-    //         localStorage.removeItem("phone");
-    //         localStorage.removeItem("id");
-    //         window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/gwc.html";
-    //     } else {
-    //         window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/login.html";
-    //     }
-    // })
-    // $(".productShow ul").on("click", "a", function () {
-    //     /* 检查是否已经登录 ，如果没有登录那就跳转到登录页面*/
-    //     if (!localStorage.phone) {
-    //         window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/login.html";
-    //     }
-    //     /* 获取当前商品的ID */
-    //     let good_id = $(this).parent().parent().data().id;
-    //     console.log($(this).parent().parent().data().id);
-
-    //     /* 发送网络请求把当前数据添加到购物车表中 */
-    //     /* 数据库表 cart_id  good_id  num isChecked */
-    //     /* 添加数据： */
-    //     /* 删除数据： */
-    //     /* 更新数据： */
-    //     $.ajax({
-    //         url: "http://127.0.0.1/code/jiuxian/src/jiuxian/server/cart.php",
-    //         data: {
-    //             type: "add",
-    //             good_id: good_id,
-    //             id: localStorage.id
-    //         },
-    //         dataType: "json",
-    //         success: function (response) {
-    //             console.log(response);
-    //             if (response.status == "success") {
-    //                 // $(".cart_total").text($(".cart_total").text() * 1 + 1);
-    //             }
-    //         }
-    //     });
-    // })
+        /* 发送网络请求把当前数据添加到购物车表中 */
+        /* 数据库表 cart_id  good_id  num isChecked */
+        /* 添加数据： */
+        /* 删除数据： */
+        /* 更新数据： */
+        $.ajax({
+            url: "../server/cart.php",
+            data: {
+                type: "add",
+                good_id: good_id,
+                id: localStorage.id
+            },
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.status == "success") {
+                    $("#head_car_count").text($("#head_car_count").text() * 1 + 1);
+                }
+            }
+        });
+    })
 
 
 

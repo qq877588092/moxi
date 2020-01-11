@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/pay.css">
     <link rel="stylesheet" href="css/hyb-com.css">
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/getcart.js"></script>
     <script src="js/show.js"></script>
     <script src="js/cart.js"></script>
 </head>
@@ -34,9 +35,9 @@
                     <a class="register" href="./loginRegister.html">免费注册</a>
                 </li>
                 <li id="toolbar_right"></li>
-                <li><a class="Shopping" href="http://www.moximoxi.net/buycart.aspx">
+                <li><a class="Shopping" href="./cart.html">
                         购物车 <strong style="font-weight:700;" id="head_car_count"></strong> 件商品</a></li>
-                <li><a class="Online_service" href="http://www.moximoxi.net/CustomSupport.aspx">
+                <li><a class="Online_service" href="./cart.html">
                         在线客服 400-660-6366</a></li>
             </ul>
         </div>
@@ -49,7 +50,7 @@
             <div class="inHeaderT">
                 <div class="logo">
                     <h1>
-                        <a href="http://www.moximoxi.net" title="摩西网">摩西网</a></h1>
+                        <a href="./moxi.html" title="摩西网">摩西网</a></h1>
                     <span></span>
                 </div>
                 <div class="search">
@@ -126,6 +127,10 @@
                 <div id="buycart_GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="buycartbox cart-main">
                     <div class="lightBg cart-thead">
                         <div class="tit column t-checkbox"><span class=""></span></div>
+                        <div class="cTab-tr cart-checkbox">
+                            <label class="check-all checkbox-checked "><i class="cartIcon"></i><input class="quanxuan" name="" type="checkbox" value=""></label>
+                            <span class="checkAllText">全选</span>
+                          </div>
                         <div class=" column t-goods">商品</div>
                         <div class="tit_price column t-price">价格</div>
                         <div class="tit_procount column t-quantity">数量</div>
@@ -134,93 +139,7 @@
                         <div class="clr"></div>
                     </div>
                     <div class="cart-item-list">
-                        <div class="item item-list">
-                            <div class="item-s-form">
-                                <div class="cart-checkbox" style="display:none;"><input childcount="0"
-                                        buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="checkbox-choose" type="checkbox"
-                                        value="44537"></div>
-                                <div class="p-goods cell" style="margin-left: 20px;">
-                                    <div class="pic p-img"><a href="http://goods0.moximoxi.net/goods-44537.html"><img
-                                                src="http://images.moximoxi.com/uploads/pro158image/201505141149027050.jpg"></a>
-                                    </div>
-                                    <div class="proname p-msg"><a
-                                            href="http://goods0.moximoxi.net/goods-44537.html">【日本直邮】贝亲/Pigeon
-                                            奶嘴K类型M号（圆孔）一个</a>
-                                        <div class="tips"></div>
-                                    </div>
-                                </div>
-                                <div class=" p-price cell"><em class="p-m">48.32</em> </div>
-                                <div class="procount_new p-quantity cell">
-                                    <div class="wrap-input"> <a href="javascript:void(0);" class="btn-reduce "
-                                            cartkey="44537">-</a> <input class="buy-num" type="text" cartkey="44537"
-                                            value="1" count="1"> <a href="javascript:void(0);" class="btn-add "
-                                            cartkey="44537">+</a> </div>
-                                </div>
-                                <div class=" p-sum cell"> <em>48.32</em>元</div>
-                                <div class=" p-action cell"> <a href="javascript:;"
-                                        onclick="MX.Goods.Collect('44537',0);">移入收藏夹</a> <a class="btn-delete"
-                                        href="javascript:;" cartkey="44537">删除</a> </div>
-                                <div class="clr"></div>
-                            </div>
-                        </div>
-                        <div class="item item-list">
-                            <div class="item-s-form">
-                                <div class="cart-checkbox" style="display:none;"><input childcount="0"
-                                        buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="checkbox-choose" type="checkbox"
-                                        value="44205"></div>
-                                <div class="p-goods cell" style="margin-left: 20px;">
-                                    <div class="pic p-img"><a href="http://goods0.moximoxi.net/goods-44205.html"><img
-                                                src="http://images.moximoxi.com/uploads/pro158image/201505141133156110.jpg"></a>
-                                    </div>
-                                    <div class="proname p-msg"><a
-                                            href="http://goods0.moximoxi.net/goods-44205.html">【日本直邮】贝亲/Pigeon 玻璃奶瓶专用奶瓶刷
-                                            尼龙清洁刷 2way</a>
-                                        <div class="tips"></div>
-                                    </div>
-                                </div>
-                                <div class=" p-price cell"><em class="p-m">40.94</em> </div>
-                                <div class="procount_new p-quantity cell">
-                                    <div class="wrap-input"> <a href="javascript:void(0);" class="btn-reduce "
-                                            cartkey="44205">-</a> <input class="buy-num" type="text" cartkey="44205"
-                                            value="1" count="1"> <a href="javascript:void(0);" class="btn-add "
-                                            cartkey="44205">+</a> </div>
-                                </div>
-                                <div class=" p-sum cell"> <em>40.94</em>元</div>
-                                <div class=" p-action cell"> <a href="javascript:;"
-                                        onclick="MX.Goods.Collect('44205',0);">移入收藏夹</a> <a class="btn-delete"
-                                        href="javascript:;" cartkey="44205">删除</a> </div>
-                                <div class="clr"></div>
-                            </div>
-                        </div>
-                        <div class="item item-list">
-                            <div class="item-s-form">
-                                <div class="cart-checkbox" style="display:none;"><input childcount="0"
-                                        buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="checkbox-choose" type="checkbox"
-                                        value="44199"></div>
-                                <div class="p-goods cell" style="margin-left: 20px;">
-                                    <div class="pic p-img"><a href="http://goods0.moximoxi.net/goods-44199.html"><img
-                                                src="http://images.moximoxi.com/uploads/pro158image/201505141132524710.jpg"></a>
-                                    </div>
-                                    <div class="proname p-msg"><a
-                                            href="http://goods0.moximoxi.net/goods-44199.html">【日本直邮】贝亲/Pigeon
-                                            宝宝奶瓶果蔬清洁剂700ml</a>
-                                        <div class="tips"></div>
-                                    </div>
-                                </div>
-                                <div class=" p-price cell"><em class="p-m">43.8</em> </div>
-                                <div class="procount_new p-quantity cell">
-                                    <div class="wrap-input"> <a href="javascript:void(0);" class="btn-reduce "
-                                            cartkey="44199">-</a> <input class="buy-num" type="text" cartkey="44199"
-                                            value="1" count="1"> <a href="javascript:void(0);" class="btn-add "
-                                            cartkey="44199">+</a> </div>
-                                </div>
-                                <div class=" p-sum cell"> <em>43.8</em>元</div>
-                                <div class=" p-action cell"> <a href="javascript:;"
-                                        onclick="MX.Goods.Collect('44199',0);">移入收藏夹</a> <a class="btn-delete"
-                                        href="javascript:;" cartkey="44199">删除</a> </div>
-                                <div class="clr"></div>
-                            </div>
-                        </div>
+ 
                     </div>
                     <div class="buycarttool cart-thead car-end">
                         <div class="btnbox operation"> <a style="display:none;" class="btn-clearbuycart remove-batch"
@@ -232,7 +151,7 @@
                             <img class="submit-waiting"  alt=""
                                 style="float:right; vertical-align:middle;display:none;">
                             <div class="price-sum"> <span class="couponstatus-box "></span><span
-                                    class="sumPrice">总价(不含运费)：<em>¥133.07</em></span> </div>
+                                    class="sumPrice">总价(不含运费)：<em>¥0.00</em></span> </div>
                         </div>
                         <div class="clr"></div>
                     </div>

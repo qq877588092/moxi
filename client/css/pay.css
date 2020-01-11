@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+a,div{
+	color: #666 !important;
+}
 /* CSS Document */
 .main.pay-main {
 	background: #fff;
@@ -64,7 +66,7 @@
 }
 
 .cart-thead .t-goods {
-	width: 606px;
+	width: 536px;
 	text-indent: 30px;
 }
 
@@ -152,7 +154,7 @@
 }
 
 .p-goods {
-	width: 585px;
+	width: 516px;
 	float: left;
 }
 
@@ -1213,4 +1215,7 @@
 }
 #buycart-content{
 	margin: 0 !important;
+}
+.price{
+	width: 118px !important;
 }

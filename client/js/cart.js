@@ -27,7 +27,7 @@ $(() => {
         type: "get",
         id: localStorage.id
       },
-      url: "http://127.0.0.1/code/jiuxian/src/jiuxian/server/cart.php",
+      url: "../server/cart.php",
       dataType: "json",
       success: function (res) {
         // console.log(res.data);
@@ -45,147 +45,54 @@ $(() => {
     // console.log(data.goods);
     let html = data.goods.map(item => {
       return `
-            <div class="cart-tbody">
-            <div class="gwclist">
-              <div class="gwclist-shop">
-                <div class="news">
-                  <div class="dx checkbox">
-                    <label for=""> <input class="zixuan" type="checkbox"></label>
-                  </div>
-                  <div class="dx shop_info" good_id=${item.good_id}>
-                    <div class="shop_img">
-                      <a href="">
-                        <img src=${item.src} width="80"
-                          height="80">
-                      </a>
-                      <div class="shop_name">
-                        <a href="" target="_blank">
-                        ${item.title}
-                        </a>
-                      </div>
+                <div class="item item-list" good_id=${item.good_id}>
+                <div class="item-s-form">
+                    <div class="cart-checkbox" style="display:block;"><input childcount="0"
+                            buycart="GWC_1_0_0_0_0_0_0_0_0_0_0_0_0" class="checkbox-choose zixuan" type="checkbox"
+                            value="44537"></div>
+                    <div class="p-goods cell" style="margin-left: 20px;">
+                        <div class="pic p-img"><a href="#"><img
+                                    src=${item.src}></a>
+                        </div>
+                        <div class="proname p-msg"><a
+                                href="#">${item.title}</a>
+                            <div class="tips"></div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="dx shop_price">
-                    <h6 class="pic">￥${item.price}</h6>
-                  </div>
-                  <div class="dx shop_jb">
-                    <h6>114金币</h6>
-                  </div>
-                  <div class="dx shop_add">
-                    <input type="button" value="-" class="jian">
-                     <input name="num" type="text" value=${item.num} class="val">
-                      <input
-                      type="button" value="+" class="jia">
-                  </div>
-                  <div class="dx shop_xj">
-                    <h6  class="price">￥${item.price}</h6>
-                  </div>
-                  <div class="dx shop_del">
-                    <h6>删除</h6>
-                  </div>
+                    <div class=" p-price cell"><em class="p-m pic">￥${item.price.substring(0,item.price.length - 4)}</em> </div>
+                    <div class="procount_new p-quantity cell">
+                        <div class="wrap-input"> <a href="javascript:void(0);" class="btn-reduce jian"
+                                cartkey="44537">-</a> <input class="buy-num val" type="text" cartkey="44537"
+                                value=${item.num} count="1"> <a href="javascript:void(0);" class="btn-add jia"
+                                cartkey="44537">+</a> </div>
+                    </div>
+                    <div class=" p-sum cell price"> <em>￥0</em></div>
+                    <div class=" p-action cell"> <a href="javascript:;"
+                            onclick="MX.Goods.Collect('44537',0);">移入收藏夹</a> <a class="btn-delete"
+                            href="javascript:;" cartkey="44537">删除</a> </div>
+                    <div class="clr"></div>
                 </div>
-              </div>
             </div>
-          </div>
           `
     }).join('');
-    $(".cart-t").append(html);
+    $(".cart-item-list").append(html);
   }
-
-
-  // $("body").on("click", "#all", function () {
-  //     // $(this).next("label").toggleClass("mark");
-  //     /* 设置页面中所有的复选框都选中 */
-  //     $("body").find("input[type=checkbox]").next("label").toggleClass("mark");
-  //     totalMoney();
-  // })
-
-  // $("body").on("click", ".jia,.jian", function () {
-  //   console.log(this);
-
-  //     /* 更改数量|发送网络请求 */
-  //     let count;
-  //     if (this.className == "jia") {
-  //         count = $(this).prev().val() * 1 + 1;
-  //         $(this).prev().val(count);
-  //     } else {
-  //         count = $(this).next().val() * 1 - 1;
-  //         $(this).next().val(count);
-  //     }
-
-  //     let price = $(this).parents(".order_item").find(".sum_price").data().price;
-  //     $(this).parents(".order_item").find(".sum_price").text("￥" + price * count);
-
-  //     let gid = $(this).parents(".order_item").attr("gid");
-  //     updateCartData(this.className, gid, localStorage.id);
-  //     totalMoney();
-  // });
-
-  // function updateCartData(flag, good_id, id) {
-  //     $.ajax({
-  //         url: "../server/cart.php",
-  //         data: {
-  //             type: "update",
-  //             flag,
-  //             id,
-  //             good_id
-  //         }
-  //     });
-  // }
-
-  // /* 删除功能 */
-  // $("body").on("click", ".delBtn", function () {
-  //     let good_id = $(this).parents(".order_item").attr("gid");
-  //     $.ajax({
-  //         url: "../server/cart.php",
-  //         data: { type: "del", good_id, id: localStorage.id },
-  //         dataType: "json",
-  //         success: function (response) {
-  //             console.log(response);
-  //             loadCart();
-  //         }
-  //     });
-  // })
-
-
-  // function totalMoney() {
-  //     console.log("计算总价");
-
-  //     let total_count = 0;
-  //     let total_price = 0;
-
-  //     $(".order_item").each((index, ele) => {
-  //         // console.log($(ele).find("input[type='checkbox']").next().hasClass("mark"));
-  //         if ($(ele).find("input[type='checkbox']").next().hasClass("mark")) {
-  //             let count = $(ele).find(".sum").val() * 1;
-  //             let price = $(ele).find(".sum_price").text().substr(1) * 1;
-
-  //             total_count += count;
-  //             total_price += count * price;
-  //         }
-
-  //     });
-
-  //     $(".piece_num").text(total_count);
-  //     $(".total_text").text("￥" + total_price.toFixed(2));
 
   //购物车功能
   function gwc() {
+    //进来先计算小计
     $(".price").each((i, ele) => {
       // console.log(Number($(".val").eq(i).attr("value")));
-      // console.log(Number($(".pic").eq(i).text().slice("1")));
-      $(ele).text("￥" + Number($(".val").eq(i).attr("value")) * Number($(".pic").eq(i).text().slice("1")));
+      // console.log(Number($(".p-price>em").eq(i).text().slice("1")));
+      $(ele).text("￥" + Number($(".val").eq(i).attr("value")) * Number($(".p-price>em").eq(i).text().slice("1")));
     })
     //全选
     $(".quanxuan").click(function () {
-      console.log("====");
-
       $(".zixuan,.quanxuan").prop("checked", $(this).prop("checked"))
       total();
     });
     //子选
     // console.log($(".zixuan"));
-
     $(".zixuan").click(function () {
       console.log("=========");
       if ($(".zixuan:checked").length == $(".zixuan").length) {
@@ -202,8 +109,9 @@ $(() => {
       $(this).siblings(".val").val(vals);
       price($(this), vals);
       //发请求改变数量
-      let good_id = $(this).parent().siblings(".shop_info").attr("good_id");
-      updateCartData(this.className, good_id, localStorage.id);
+      let good_id = $(this).parents(".item-list").attr("good_id");
+      updateCartData("jia", good_id, localStorage.id);
+      console.log("+++++++++");
       total();
     })
     //-选
@@ -216,9 +124,10 @@ $(() => {
       $(this).siblings(".val").val(vals);
       price($(this), vals);
       //发请求改变数量
-      console.log($(this).parent().siblings(".shop_info").attr("good_id"));
-      let good_id = $(this).parent().siblings(".shop_info").attr("good_id");
-      updateCartData(this.className, good_id, localStorage.id);
+      // console.log($(this).parents(".item-list").attr("good_id"));
+      let good_id = $(this).parents(".item-list").attr("good_id");
+      updateCartData("jian", good_id, localStorage.id);
+      console.log("---------");
       total();
     })
     //输入计量
@@ -229,43 +138,48 @@ $(() => {
     })
     //+-选功能块
     function price(item, val) {
-      let s = item.parent().siblings(".shop_price").children(".pic").text().substr(1);
-      s = "¥" + (s * val).toFixed(2);
-      item.parent().siblings(".shop_xj").children(".price").text(s);
+      let sum = item.parents(".procount_new").siblings(".p-price").children(".pic").text().substr(1);
+      sum = "¥" + (sum * val).toFixed(2);
+      console.log(item.parents(".procount_new").siblings(".price"));
+      item.parents(".procount_new").siblings(".price").text(sum);
     }
     //总价功能块
     function total() {
       let sum = 0;
-      $(".zixuan:checked").parent().parent().siblings(".shop_xj").children(".price").each(function (i, ele) {
+      $(".zixuan:checked").parent().siblings(".price").each(function (i, ele) {
         sum += Number($(ele).text().slice(1));
         console.log(sum);
-
       })
-      $(".total>em").text("¥" + sum.toFixed(2));
+      $(".sumPrice>em").text("¥" + sum.toFixed(2));
     }
     //删除块
-    $(".shop_del").on("click", "h6", function () {
-      $(this).parents(".cart-tbody").remove();
-      let good_id = $(this).parent().siblings(".shop_info").attr("good_id");
-      $.ajax({
-        url: "http://127.0.0.1/code/jiuxian/src/jiuxian/server/cart.php",
-        data: {
-          type: "del",
-          good_id,
-          id: localStorage.id
-        },
-        dataType: "json",
-        success: function (response) {
-          console.log(response);
-          total();
-        }
-      });
+    $(".p-action").on("click", ".btn-delete", function () {
+      if (confirm("确定删除该商品吗？")) {
+        let good_id = $(this).parents(".item-list").attr("good_id");
+        $(this).parents(".item-list").remove();
+        $.ajax({
+          url: "../server/cart.php",
+          data: {
+            type: "del",
+            good_id,
+            id: localStorage.id
+          },
+          dataType: "json",
+          success: function (response) {
+            console.log(response);
+            total();
+          }
+        });
+        alert("删除成功");
+        return true;
+      }
+      return false;
     })
 
     //
     function updateCartData(flag, good_id, id) {
       $.ajax({
-        url: "http://127.0.0.1/code/jiuxian/src/jiuxian/server/cart.php",
+        url: "../server/cart.php",
         data: {
           type: "update",
           flag,

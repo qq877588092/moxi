@@ -77,7 +77,7 @@ a,button{cursor:pointer;}
 }
 .insideNavRight li .Shopping{
 	padding:0 18px 0 27px;
-	color:#fff;
+	color:#fff !important;
 	background:#FF3D3B url(../images/sideNav_ico.png) 10px -108px no-repeat;
 }
 .insideNavRight li .Online_service{

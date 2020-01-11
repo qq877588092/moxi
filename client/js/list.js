@@ -1,13 +1,13 @@
 $(() => {
     $.getJSON("../server/moxi-banner.json",
         function (data) {
-            let liHtmlLeft = data.map(ele => `<li><a class="hotSearch" href="#">${ele.liName}</a></li>`).join("");
+            let liHtmlLeft = data.map(ele => `<li><a class="hotSearch" href="javascript:;">${ele.liName}</a></li>`).join("");
             $(".inServerMenu").html(liHtmlLeft);
             let rightBox = data.map(function (ele, i) {
                 var h3Html = ele.rightBox.h3Text.map((ele, i) => {
                     return `
                     <h3>
-                        <a href="">
+                        <a href="javascript:;">
                             ${ele}
                             > </a>
                     </h3>
@@ -19,7 +19,7 @@ $(() => {
                 let aHtml = ele.rightBox.aText.map(function (ele) {
                     return ele.map(function (ele) {
                         return `
-                            <a href="#">
+                            <a href="javascript:;">
                             ${ele}
                             </a>&nbsp;
                             `
@@ -68,11 +68,11 @@ $(() => {
     function lists(data) {
         let html = data.map(function (ele, i) {
             return `
-                <li class="sel-shop-iteam ">
+                <li class="sel-shop-iteam" good_id=${ele.good_id}>
                 <div style="position: absolute; top: 0px;">  
                 </div>
                 <div class="s-pic">
-                    <a href="#" target="_blank" title=${ele.title}>
+                    <a href="javascript:;" target="_blank" title=${ele.title}>
                         <img src=${ele.src} _src=${ele.src} style="width: 158px; height: 149px;">&nbsp;</a>
                 </div>
                 <div class="cart-price" protype="0" proid="72079">
@@ -82,7 +82,7 @@ $(() => {
                             ${ele.discount}</strong>    
                     <input type="button" value="免费试用" style="cursor:pointer;display:none" class="FreeTrial">
                 </div>
-                <em class="s-dec"><a href="#" target="_blank" title=${ele.title}>
+                <em class="s-dec"><a href="javascript:;" target="_blank" title=${ele.title}>
                     
                 ${ele.title}</a> </em>
                 
@@ -90,6 +90,23 @@ $(() => {
                 `
         }).join("")
         $(".select-list").html(html);
+
+        /* 实现点击跳转详情页传入对应商品数据 */
+        $(".sel-shop-iteam").click(function () {
+            // console.log($(this).attr("good_id"));
+            // console.log(data[$(this).index()]);
+            let title = data[$(this).index()].title;
+            let src = data[$(this).index()].src;
+            let price = data[$(this).index()].price;
+            let discount = data[$(this).index()].discount;
+            let good_id = data[$(this).index()].good_id;
+            // let src = $(this).children("div").children("img")[0].src;
+            // let name = $(this).children("div").children("h6")[0].innerText;
+            // let price = $(this).children("div").children("h3")[0].innerText;
+            let queryString = `src=${src}&name=${title}&price=${price}&discount=${discount}&good_id=${good_id}`;
+            // console.log(queryString);
+            window.location.href = "http://127.0.0.1/code/moxi/client/show.html?" + queryString;
+        })
 
     }
 
@@ -125,7 +142,7 @@ $(() => {
             for (i = 0; i < count; i++) {
                 html1 +=
                     `<a class="item-cur ${i==0?"on":""}"
-                    href="#">${i+1}</a>`
+                    href="javascript:;">${i+1}</a>`
             }
             let html2 =
                 `
@@ -134,7 +151,7 @@ $(() => {
                     <div class="items">
                     ${html1}
                     </div><a class="next"
-                        href="#">下一页</a>
+                    href="javascript:;">下一页</a>
                     <a class="total">共
                     ${count}页 </a><a class="to">跳转到第<input type="text">页</a> <a href="javascript:;" class="ensure">确定</a>
                 </div>
@@ -171,61 +188,6 @@ $(() => {
 
         $(this).children("a").children("i").toggleClass("xlbgImg");
     })
-
-
-
-
-    /* 实现点击添加商品到购物车的功能 */
-
-    // let showText = localStorage.phone ? localStorage.phone + ",欢迎你！" : "请登录";
-    // $(".topheadderLeft p").text(showText);
-    // if (localStorage.phone) {
-    //     $(".topheadderLeft a").text("注销");
-    // } else {
-    //     $(".topheadderLeft a").text("登录");
-    // }
-
-    // $(".topheadderLeft a").click(function () {
-    //     if ($(this).text() == "注销") {
-    //         localStorage.removeItem("phone");
-    //         localStorage.removeItem("id");
-    //         window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/gwc.html";
-    //     } else {
-    //         window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/login.html";
-    //     }
-    // })
-    // $(".productShow ul").on("click", "a", function () {
-    //     /* 检查是否已经登录 ，如果没有登录那就跳转到登录页面*/
-    //     if (!localStorage.phone) {
-    //         window.location.href = "http://127.0.0.1/code/jiuxian/src/jiuxian/client/login.html";
-    //     }
-    //     /* 获取当前商品的ID */
-    //     let good_id = $(this).parent().parent().data().id;
-    //     console.log($(this).parent().parent().data().id);
-
-    //     /* 发送网络请求把当前数据添加到购物车表中 */
-    //     /* 数据库表 cart_id  good_id  num isChecked */
-    //     /* 添加数据： */
-    //     /* 删除数据： */
-    //     /* 更新数据： */
-    //     $.ajax({
-    //         url: "http://127.0.0.1/code/jiuxian/src/jiuxian/server/cart.php",
-    //         data: {
-    //             type: "add",
-    //             good_id: good_id,
-    //             id: localStorage.id
-    //         },
-    //         dataType: "json",
-    //         success: function (response) {
-    //             console.log(response);
-    //             if (response.status == "success") {
-    //                 // $(".cart_total").text($(".cart_total").text() * 1 + 1);
-    //             }
-    //         }
-    //     });
-    // })
-
-
 
 
 })
