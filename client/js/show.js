@@ -137,9 +137,8 @@ $(() => {
         let val = data[1];
         obj[key] = val;
     })
-    console.log(obj);
-
-    $(".jqzoom")[0].src = obj.src;
+    // console.log(obj);
+    $(".dpBinImg img")[0].src = obj.src;
     $(".hyb-dinfo-box-center h1").text(obj.name);
     $("#em-pricecny").text(obj.price);
     $(".hyb-price-ago").text(obj.discount);
